@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+    <title>JavaScript Color Changer</title>
+    <style>
+        body{
+            background-color: #6739B3;
+            transition-duration: .5s;
+        }
+
+        .container{
+            width: 50%;
+            height: 46px;
+            text-align: center;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            margin: auto;
+        }
+
+        .container span {
+            width: 40px;
+            height: 40px;
+            border: 2px solid white;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .container input{
+            border: none;
+            width: 47px;
+            height: 47px;
+            background-color: rgba(0,0,0,0);
+            border-radius: 50%;
+        }
+
+        .container input::-webkit-color-swatch-wrapper{
+            padding: 0px;
+            width: 44px;
+            height: 44px;
+        }
+
+        .container input::-webkit-color-swatch{
+            border: none;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="color">
+        <span value="#9D27B1" onClick="changeColor(this)" style="background-color: #9D27B1"></span>
+        <span value="#6739B3" onClick="changeColor(this)" style="background-color: #6739B3"></span>
+        <span value="#4052B6" onClick="changeColor(this)" style="background-color: #4052B6"></span>
+        <span value="#2196F3" onClick="changeColor(this)" style="background-color: #2196F3"></span>
+        <span value="#00BCD5" onClick="changeColor(this)" style="background-color: #00BCD5"></span>
+        <span value="#009788" onClick="changeColor(this)" style="background-color: #009788"></span>
+        <span value="#4CB050" onClick="changeColor(this)" style="background-color: #4CB050"></span>
+        <span value="#8CC24A" onClick="changeColor(this)" style="background-color: #8CC24A"></span>
+        <span value="#CDDC39" onClick="changeColor(this)" style="background-color: #CDDC39"></span>
+        <span value="#FFEB3C" onClick="changeColor(this)" style="background-color: #FFEB3C"></span>
+        <span value="#F89601" onClick="changeColor(this)" style="background-color: #F89601"></span>
+        <span value="#FF5823" onClick="changeColor(this)" style="background-color: #FF5823"></span>
+    </div>
+
+    <script>
+        function changeColor(v){
+            document.getElementsByTagName('body')[0].style.backgroundColor = v.getAttribute('value')
+        }
+
+        let input = document.getElementsByTagName('input')[0];
+        input.oninput = function(){
+            document.getElementsByTagName('body')[0].style.backgroundColor = input.value 
+        }
+    </script>
+</body>
+</html>
